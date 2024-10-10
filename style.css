@@ -366,71 +366,73 @@ button[type="submit"]:active {
 }
 
 .container-2 {
-    max-width: 1200px; /* Ajusta según tu diseño */
+    max-width: 1200px;
     margin: 20px auto;
-    padding: 0 20px;
+    padding: 0 10px; /* Reduce el padding lateral */
 }
 
 .slider-2 {
-    position: relative; /* Para posicionar el overlay correctamente */
+    position: relative;
     height: auto;
-    width: 33%; /* Mantiene un tercio del contenedor */
-    max-width: 400px; /* Aumenta el ancho máximo del slider */
-    margin: 0 10px; /* Agrega un margen horizontal para separar los sliders */
+    width: 32%; /* Ajustamos para que entren 3 sliders en pantallas grandes */
+    max-width: 370px; /* Reduce ligeramente el ancho máximo */
+    margin: 0 5px; /* Reduce el margen horizontal */
     overflow: hidden;
-    border: 10px solid transparent;
+    border: 5px solid transparent; /* Reduce el borde para minimizar la separación */
 }
 
 .sliders-row {
-    display: flex; /* Utiliza flexbox para alinear en fila */
-    justify-content: space-between; /* Espacio entre los sliders */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centramos los sliders en la fila */
+    gap: 10px; /* Pequeño espacio entre los sliders */
 }
 
 .overlay-gallery {
-    position: absolute; /* Posicionamiento absoluto */
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0)); /* Degradado */
-    z-index: 2; /* Encima de las imágenes */
+    background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    z-index: 2;
 }
 
 .text-overlay {
-    position: absolute; /* Posicionamiento absoluto */
-    top: 50%; /* Centrar verticalmente */
-    left: 26%; /* Centrar horizontalmente */
-    transform: translate(-50%, -50%); /* Ajustar el centro */
-    color: rgb(0, 0, 0); /* Color del texto (blanco para contraste) */
-    font-size: 2em; /* Tamaño del texto */
-    z-index: 3; /* Encima del overlay */
-    text-align: center; /* Centrar el texto */
-    font-family: 'Georgia', serif; /* Tipografía elegante */
-    line-height: 1.5; /* Espaciado entre líneas */
-    padding: 10px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 2em;
+    z-index: 3;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    line-height: 1.5;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .slider-2 ul {
-    position: relative; /* Para que el contenido de la lista esté debajo del overlay */
-    z-index: 1; /* Debajo del overlay */
-    width: 500%; /* Mantener el ancho total para la animación */
+    position: relative;
+    z-index: 1;
+    width: 500%;
     display: flex;
     padding: 0;
-    animation: cambio 15s infinite alternate linear; /* La animación no cambia */
+    animation: cambio 15s infinite alternate linear;
 }
 
 .slider-2 ul li {
-    width: 100%; /* Cada item ocupa el 100% del slider */
+    width: 100%;
     list-style: none;
 }
 
 .slider-2 img {
-    height: auto; /* Mantener la altura automática */
-    width: 100%; /* Ajustar el ancho al contenedor */
-    max-height: 400px; /* Aumenta la altura máxima de la imagen */
-    object-fit: cover; /* Mantener la proporción de aspecto */
-    z-index: 0; /* Debajo del overlay */
+    height: auto;
+    width: 100%;
+    max-height: 370px; /* Reduce la altura máxima de las imágenes */
+    object-fit: cover;
+    z-index: 0;
 }
 
 @keyframes cambio {
@@ -446,6 +448,46 @@ button[type="submit"]:active {
     75% { margin-left: -300%; }
     100% { margin-left: -300%; }
 }
+
+/* Media Queries para pantallas medianas */
+@media (max-width: 1024px) {
+    .slider-2 {
+        width: 48%; /* Dos sliders por fila en pantallas medianas */
+    }
+
+    .text-overlay {
+        font-size: 1.5em; /* Reduce el tamaño del texto */
+    }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .slider-2 {
+        width: 100%; /* Un slider por fila en pantallas pequeñas */
+        margin-bottom: 20px;
+    }
+
+    .text-overlay {
+        font-size: 1.2em; /* Reduce aún más el tamaño del texto */
+    }
+
+    .slider-2 img {
+        max-height: 300px; /* Reduce el tamaño máximo de las imágenes en pantallas pequeñas */
+    }
+}
+
+/* Media Queries para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    .text-overlay {
+        font-size: 1em; /* Ajuste para pantallas muy pequeñas */
+    }
+
+    .slider-2 img {
+        max-height: 250px; /* Ajusta la altura de la imagen para móviles */
+    }
+}
+
+
 
 
 footer {
