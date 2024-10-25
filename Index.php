@@ -38,9 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['check_availability'])) {
         // Acción: Verificar disponibilidad
         if (check_availability($conn, $tipo_habitacion, $fecha_entrada, $fecha_salida)) {
-            $message = "La habitación está disponible.";
+            $message = "La habitacion esta disponible.";
         } else {
-            $message = "Lo siento, la habitación no está disponible en esas fechas.";
+            $message = "Lo sentimos, la habitación no está disponible en esas fechas..";
         }
     }
 
@@ -48,12 +48,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Acción: Realizar reserva
         if (check_availability($conn, $tipo_habitacion, $fecha_entrada, $fecha_salida)) {
             if (make_reservation($conn, $tipo_habitacion, $fecha_entrada, $fecha_salida, $adultos, $ninos)) {
-                $message = "¡Reserva realizada con éxito!";
+                $message = "Reserva realizada con éxito!";
             } else {
-                $message = "Hubo un error al realizar la reserva. Por favor, inténtalo de nuevo.";
+                $message = "Hubo un error al realizar tu reserva. Por favor inténtalo de nuevo.";
             }
         } else {
-            $message = "Lo siento, la habitación no está disponible en esas fechas.";
+            $message = "Lo sentimos, la habitación no está disponible en esas fechas..";
         }
     }
 }
@@ -118,7 +118,7 @@ $conn->close();
 <div class="video-container">
     <center>
     <video width="600" height="300" controls>
-        <source src="Imagenes/Video_mamalon.mp4" type="video/mp4">
+        <source src="Video_mamalon.mp4" type="video/mp4">
     </video>
     </center>
 </div>
@@ -129,7 +129,7 @@ $conn->close();
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <img src="Imagenes/Presentacion8.jpg" alt="Imagen 1" class="card-img-top">
+                <img src="Presentacion8.jpg" alt="Imagen 1" class="card-img-top">
                 <div class="overlay">
                     <div class="card-title"><h1>Recepción</h1>Atención personalizada las 24 horas del día.</div>
                 </div>
@@ -137,7 +137,7 @@ $conn->close();
         </div>
         <div class="col-md-4">
             <div class="card">
-                <img src="Imagenes/Presentacion2.jpg" alt="Imagen 2" class="card-img-top">
+                <img src="Presentacion2.jpg" alt="Imagen 2" class="card-img-top">
                 <div class="overlay">
                     <div class="card-title"><h1>Restaurante</h1>Cocina gourmet con platillos internacionales.</div>
                 </div>
@@ -145,7 +145,7 @@ $conn->close();
         </div>
         <div class="col-md-4">
             <div class="card">
-                <img src="Imagenes/Presentacion3.jpg" alt="Imagen 3" class="card-img-top">
+                <img src="Presentacion3.jpg" alt="Imagen 3" class="card-img-top">
                 <div class="overlay">
                     <div class="card-title"><h1>Habitaciones</h1>Comodidad y elegancia en cada habitación.</div>
                 </div>
@@ -153,7 +153,7 @@ $conn->close();
         </div>
         <div class="col-md-4">
             <div class="card">
-                <img src="Imagenes/Presentacion5(1).jpg" alt="Imagen 4" class="card-img-top">
+                <img src="Presentacion5(1).jpg" alt="Imagen 4" class="card-img-top">
                 <div class="overlay">
                     <div class="card-title"><h1>Spa</h1>Relájate en nuestro spa de lujo.</div>
                 </div>
@@ -161,7 +161,7 @@ $conn->close();
         </div>
         <div class="col-md-4">
             <div class="card">
-                <img src="Imagenes/Presentacion4.jpg" alt="Imagen 5" class="card-img-top">
+                <img src="Presentacion4.jpg" alt="Imagen 5" class="card-img-top">
                 <div class="overlay">
                     <div class="card-title"><h1>Gimnasio</h1>Instalaciones modernas para mantenerse en forma.</div>
                 </div>
@@ -169,7 +169,7 @@ $conn->close();
         </div>
         <div class="col-md-4">
             <div class="card">
-                <img src="Imagenes/Presentacion10(1).jpg" alt="Imagen 6" class="card-img-top">
+                <img src="Presentacion10(1).jpg" alt="Imagen 6" class="card-img-top">
                 <div class="overlay">
                     <div class="card-title"><h1>Sala de reuniones</h1>Disfruta un ambiente seguro y tranquilo.</div>
                 </div>
@@ -190,11 +190,11 @@ $conn->close();
                     del hotel<br>
                 </div>
                 <ul>
-                    <li class="slider___item"><img src="Imagenes/Exterior1.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Exterior2.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Exterior3.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Exterior4.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Exterior5.png" alt=""></li>
+                    <li class="slider___item"><img src="Exterior1.png" alt=""></li>
+                    <li class="slider___item"><img src="Exterior2.png" alt=""></li>
+                    <li class="slider___item"><img src="Exterior3.png" alt=""></li>
+                    <li class="slider___item"><img src="Exterior4.png" alt=""></li>
+                    <li class="slider___item"><img src="Exterior5.png" alt=""></li>
                 </ul>
             </div>
             <div class="slider-2">
@@ -203,11 +203,11 @@ $conn->close();
                     Interior<br>
                     del hotel</div>
                 <ul>
-                    <li class="slider___item"><img src="Imagenes/Interior1.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Interior2.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Interior3.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Interior4.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Interior5.png" alt=""></li>
+                    <li class="slider___item"><img src="Interior1.png" alt=""></li>
+                    <li class="slider___item"><img src="Interior2.png" alt=""></li>
+                    <li class="slider___item"><img src="Interior3.png" alt=""></li>
+                    <li class="slider___item"><img src="Interior4.png" alt=""></li>
+                    <li class="slider___item"><img src="Interior5.png" alt=""></li>
                 </ul>
             </div>
             <div class="slider-2">
@@ -216,11 +216,11 @@ $conn->close();
                     Piscina<br>
                     del hotel</div>
                 <ul>
-                    <li class="slider___item"><img src="Imagenes/Piscina1.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Piscina2.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Piscina3.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Piscina4.png" alt=""></li>
-                    <li class="slider___item"><img src="Imagenes/Piscina5.png" alt=""></li>
+                    <li class="slider___item"><img src="Piscina1.png" alt=""></li>
+                    <li class="slider___item"><img src="Piscina2.png" alt=""></li>
+                    <li class="slider___item"><img src="Piscina3.png" alt=""></li>
+                    <li class="slider___item"><img src="Piscina4.png" alt=""></li>
+                    <li class="slider___item"><img src="Piscina5.png" alt=""></li>
                 </ul>
             </div>
         </div>
@@ -229,11 +229,11 @@ $conn->close();
 
 <!-- Calendario de disponibilidad y reserva -->
 <section id="calendar">
-    <h1>Booking hotel dates</h1>
+    <h1>Reserva de fechas de hotel</h1>
     <main>
         <form id="reservation-form" action="" method="POST">
             <section>
-                <h2>Fecha de entrada y de salida</h2>
+                <h2>Fecha de entrada y salida</h2>
                 <label for="checkin">Fecha de entrada:</label>
                 <input type="date" id="checkin" name="checkin" required>
                 <br>
@@ -242,7 +242,7 @@ $conn->close();
             </section>
             <section>
                 <h2>Habitación y ocupantes</h2>
-                <label for="room">Cuarto</label>
+                <label for="room">Habitación</label>
                 <select id="room" name="room" required>
                     <option value="individual">Individual</option>
                     <option value="doble">Doble</option>
@@ -259,7 +259,7 @@ $conn->close();
             </section>
             <div class="button-container">
                 <!-- Botón para verificar disponibilidad -->
-                <button type="submit" name="check_availability">Verificar Disponibilidad</button>
+                <button type="submit" name="check_availability">Check Availability</button>
                 <!-- Botón para reservar -->
                 <button type="submit" name="reserve">Reservar</button>
             </div>
@@ -269,7 +269,7 @@ $conn->close();
 </section>
 
 <footer>
-    <p>&copy; 2024 The Grand Hotel. All rights reserved.</p>
+    <p>&copy; 2024 The Grand Hotel. Reservados todos los derechos.</p>
     <br>    
     <ul id="down">
         <li id="down-1">
@@ -298,6 +298,7 @@ $conn->close();
         </li>
     </ul>
 </footer>
+
 
 </body>
 </html>

@@ -45,32 +45,32 @@ body {
 
 /* Estilos para el segundo header */
 #welcome-header {
-    position: relative; /* Permite la colocación de elementos absolutos */
-    height: 34rem; /* Altura del encabezado */
-    overflow: hidden; /* Evita desbordamientos */
+    position: relative;
+    height: 34rem;
+    overflow: hidden;
 }
 
 #welcome-header .background-2 {
-    background-image: url('Prueba.jpg'); /* Cambia la imagen si es necesario */
-    background-size: cover; /* La imagen cubre todo el fondo */
-    background-position: center; /* Centra la imagen */
-    height: 100%; /* Ocupa toda la altura del header */
-    position: absolute; /* Posicionamiento absoluto */
+    background-image: url('Prueba.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: absolute;
     top: 0; 
     left: 0; 
     right: 0; 
     bottom: 0; 
-    z-index: 1; /* Fondo debajo de otros elementos */
+    z-index: 1;
 }
 
 #welcome-header .overlay-2 {
-    background: linear-gradient(to right, rgba(248, 244, 244), rgba(255, 255, 255, 0));
-    position: absolute; /* También en posición absoluta */
+    background: linear-gradient(to right, rgba(248, 244, 244, 0.8), rgba(255, 255, 255, 0));
+    position: absolute;
     top: 0; 
     left: 0; 
     right: 0; 
     bottom: 0; 
-    z-index: 2; /* Encima de la imagen */
+    z-index: 2;
 }
 
 #welcome-header .content-2 {
@@ -88,15 +88,86 @@ body {
 }
 
 #welcome-header .content-2 h1 {
-    margin: 0; /* Elimina el margen por defecto del h1 */
-    font-size: 2.5em; /* Ajusta el tamaño de fuente según tu preferencia */
+    margin: 0;
+    font-size: 2.5em;
 }
 
 #welcome-header .content-2 p {
-    margin: 10px 0; /* Espaciado entre párrafos */
-    font-size: 1.2em; /* Ajusta el tamaño de fuente según tu preferencia */
-    line-height: 1.5; /* Mejora la legibilidad */
+    margin: 10px 0;
+    font-size: 1.2em;
+    line-height: 1.5;
 }
+
+/* Media Queries para Responsividad */
+@media (max-width: 1200px) {
+    #welcome-header .content-2 {
+        max-width: 70%;
+    }
+
+    #welcome-header .content-2 h1 {
+        font-size: 2.2em;
+    }
+
+    #welcome-header .content-2 p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 992px) {
+    #welcome-header {
+        height: 30rem;
+    }
+
+    #welcome-header .content-2 {
+        max-width: 80%;
+    }
+
+    #welcome-header .content-2 h1 {
+        font-size: 2em;
+    }
+
+    #welcome-header .content-2 p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    #welcome-header {
+        height: 25rem;
+    }
+
+    #welcome-header .content-2 {
+        max-width: 90%;
+    }
+
+    #welcome-header .content-2 h1 {
+        font-size: 1.8em;
+    }
+
+    #welcome-header .content-2 p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 576px) {
+    #welcome-header {
+        height: 20rem;
+    }
+
+    #welcome-header .content-2 {
+        padding: 10px; /* Ajusta el padding */
+    }
+
+    #welcome-header .content-2 h1 {
+        font-size: 1.5em;
+    }
+
+    #welcome-header .content-2 p {
+        font-size: 0.8em;
+    }
+}
+
+
 
 nav.arriba {
     background-color: rgba(255, 255, 255, 0); /* Fondo transparente */
@@ -120,10 +191,15 @@ li {
     margin-right: 30px; /* Espacio entre elementos del menú */
 }
 
+
 a {
     text-decoration: none;
-    color: #000000; /* Color del texto del menú */
+    color: #ffffff; /* Color del texto del menú */
     font-weight: bold;
+}
+
+.white-text {
+    color: white;
 }
 
 /* Cambia el color del enlace cuando se pasa el mouse por encima */
@@ -308,21 +384,22 @@ input[type="number"] {
 
 
 /*Prueba dezplazamiento*/
+/* Estilos generales para el contenedor del calendario */
 #calendar {
     overflow-x: auto; /* Permite el desplazamiento horizontal */
-    white-space: nowrap; /* Evita que el contenido se ajuste a la siguiente línea */
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
 }
 
+/* Estilos para el formulario de reservas */
 #reservation-form {
-    display: inline-block; /* Asegura que las secciones se alineen horizontalmente */
-    vertical-align: top; /* Alinea las secciones en la parte superior */
-    width: auto; /* Ajusta el ancho automáticamente */
+    display: flex; /* Cambiar a flex para facilitar el diseño responsivo */
+    flex-wrap: wrap; /* Permitir que las secciones se ajusten en múltiples líneas */
+    justify-content: space-between; /* Espacio entre las secciones */
 }
 
+/* Estilos para cada sección del formulario */
 #reservation-form section {
-    display: inline-block; /* Asegura que las secciones se alineen horizontalmente */
-    vertical-align: top; /* Alinea las secciones en la parte superior */
-    width: 45%; /* Ajusta el ancho de las secciones */
+    flex: 1 1 300px; /* Flexibilidad con un ancho mínimo */
     margin: 10px; /* Margen entre las secciones */
     background-color: white;
     padding: 20px;
@@ -330,12 +407,14 @@ input[type="number"] {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para los botones */
 .button-container {
     width: 100%; /* Asegura que el contenedor del botón ocupe todo el ancho */
     text-align: center; /* Centra el botón horizontalmente */
     margin-top: 20px; /* Añade un margen superior para separar el botón de las tablas */
 }
 
+/* Estilos para los botones de envío */
 button[type="submit"] {
     padding: 15px 30px;
     border-radius: 25px;
@@ -348,6 +427,7 @@ button[type="submit"] {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Efectos de hover y active para los botones */
 button[type="submit"]:hover {
     background-color: #0056b3;
     transform: scale(1.05);
@@ -356,6 +436,23 @@ button[type="submit"]:hover {
 button[type="submit"]:active {
     background-color: #004494;
     transform: scale(1);
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 600px) {
+    #reservation-form {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar elementos en la columna */
+    }
+
+    #reservation-form section {
+        width: 90%; /* Secciones más amplias en pantallas pequeñas */
+    }
+
+    button[type="submit"] {
+        width: 90%; /* Botones más anchos en pantallas pequeñas */
+        font-size: 1em; /* Ajustar el tamaño de fuente */
+    }
 }
 
 /*Galeria*/
@@ -487,14 +584,21 @@ button[type="submit"]:active {
     }
 }
 
-
-
-
+/*Footer*/
 footer {
     background-color: #352503;
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+footer li {
+    color: white;
+}
+
+footer span {
+    color: white !important; /* Forzar el color blanco */
+    font-weight: bold; /* Opcional: para destacar más el texto */
 }
 
 h2 {
